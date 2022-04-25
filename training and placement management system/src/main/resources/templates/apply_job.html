@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Applying to Jobs Page</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="form">
+            <form method="post" action="/apply_job" th:object="${job_list}">
+              <h2>Apply to Jobs</h2>
+              <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="fname" placeholder="First Name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="lname" placeholder="Last Name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="text" name="pno" placeholder="Phone number" required>
+              </div>
+              <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="input-box">
+                <input type="text" name="resume" placeholder="Link to resume" required>
+              </div>
+              <div class="input_box">
+                <label> Company Name</label>
+              </div>
+              <div class="input_box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <select name="companyName" id="companyName" required>
+                  <option th:each="jobs : ${job_list}" th:value="${jobs.companyName}" placeholder="Job Name"><span th:text="${jobs.companyName}"></span></option>
+                </select>
+              </div>
+              <br>
+              <div class="input_box">
+                <label> Interested Domains</label>
+              </div>
+              <div class="input_box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <select name="positionName" id="positionName">
+                  <option value="Data Scientist">Data Scientist</option>
+                  <option value="Machine Learning"> Machine Learning</option>
+                  <option value="Cybersecurity"> Cybersecurity</option>
+                </select>
+              </div>
+              <div class="input-box">
+                <input type="submit" name="apply_job" value="Apply Job">
+              </div>
+            </form>
+          </div>
+    </body>
+</html>

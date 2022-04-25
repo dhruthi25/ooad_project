@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Course Page</title> 
+        <style>
+        table, th, td {
+            border: 1px solid;
+          }
+          
+          .form {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            min-width: 700px;
+            min-height: 700px;
+            background-color: #fff;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            box-sizing: border-box;
+        }
+          
+          </style>
+          <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+   <div class="form">
+        <h1>Course List</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th> Course Name </th>
+                    <th> Faculty Name </th>
+                    <th> Course Details </th>
+                    <th> Course Outcomes </th>
+                    <th> Course Prerequisites </th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${course_list.empty}">
+                    <td colspan="2"> No Courses Available </td>
+                </tr>
+                <tr th:each="course : ${course_list}">
+                    <td><span th:text="${course.name}"> Course </span></td>
+                    <td><span th:text="${course.faculty}"> Faculty </span></td>
+                    <td><span th:text="${course.details}"> Details </span></td>
+                    <td><span th:text="${course.outcomes}"> Outcomes </span></td>
+                    <td><span th:text="${course.prerequisites}"> Prerequisites </span></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <a href="\student_page">Home</a>
+        <br>
+        <a href="\apply_course">Apply to Courses</a>
+
+        </div>
+    </body>
+</html>

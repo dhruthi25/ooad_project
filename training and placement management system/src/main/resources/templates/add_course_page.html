@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Course Page</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="form">
+            <form method="post" action="/add_course" th:object="${loginRequest}">
+              <h2>Add Course</h2>
+              <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="name" placeholder="Course Name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="faculty" placeholder="Faculty Name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="text-area" name="details" placeholder="Course Details" required>
+              </div>
+              <div class="input-box">
+                <input type="text-area" name="outcomes" placeholder="Course Outcomes" required>
+              </div>
+              <div class="input-box">
+                <input type="text-area" name="prerequisites" placeholder="Course Prerequisites" required>
+              </div>
+              <div class="input-box">
+                <input type="submit" name="add_course" value="Add Course">
+              </div>
+            </form>
+          </div>
+    </body>
+</html>

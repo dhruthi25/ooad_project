@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Company Page</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="form">
+            <h1>Welcome to the company page!</h1>
+            <a th:href="@{'/add-job/' + ${userLogin}}"><span>Navigate to adding jobs</span></a>
+            <a th:href="@{'/delete-job/' + ${userLogin}}"><span>Navigate to deleting jobs</span></a>
+            
+
+            <br>
+            <a href="\">Logout</a>
+        </div>
+    </body>
+</html>

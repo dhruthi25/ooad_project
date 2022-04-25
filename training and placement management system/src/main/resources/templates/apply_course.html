@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Applying to Course Page</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="form">
+            <form method="post" action="/apply_course" th:object="${loginRequest}">
+              <h2>Apply to Course</h2>
+              <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="fname" placeholder="First Name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="lname" placeholder="Last Name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="text" name="pno" placeholder="Phone number" required>
+              </div>
+              <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="input-box">
+                <input type="text" name="resume" placeholder="Link to resume" required>
+              </div>
+              <div class="input_box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <select name="cname" id="cname" required>
+                  <option th:each="course : ${course_list}" th:value="${course.name}" placeholder="Course Name"> Course:<span th:text="${course.name}"> Course </span></option>
+                </select>
+              </div>
+              <div class="input-box">
+                <input type="submit" name="apply_course" value="Apply Course">
+              </div>
+            </form>
+          </div>
+    </body>
+</html>

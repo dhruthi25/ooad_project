@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Job List</title> 
+        <style>
+        table, th, td {
+            border: 1px solid;
+          }
+          
+          .form {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            min-width: 700px;
+            min-height: 700px;
+            background-color: #fff;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            box-sizing: border-box;
+        }
+          
+          </style>
+          <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+   <div class="form">
+        <h1>Job List</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th> Company Name </th>
+                    <th>Job Position </th>
+                    <th> Job CTC </th>
+                    <th> Job Description </th>
+                    <th> Job Eligibility </th>
+                    <th> Job Location </th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${job_list.empty}">
+                    <td colspan="2"> No Jobs Available </td>
+                </tr>
+                <tr th:each="job : ${job_list}">
+                    <td><span th:text="${job.companyName}"> Course </span></td>
+                    <td><span th:text="${job.position}"> Faculty </span></td>
+                    <td><span th:text="${job.CTC}"> Details </span></td>
+                    <td><span th:text="${job.jd}"> Outcomes </span></td>
+                    <td><span th:text="${job.eligibility}"> Prerequisites </span></td>
+                    <td><span th:text="${job.location}"> Prerequisites </span></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <a href="\apply_job">Apply to Jobs</a>
+        <br>
+        <a href="\student_page">Home</a>
+        </div>
+    </body>
+</html>

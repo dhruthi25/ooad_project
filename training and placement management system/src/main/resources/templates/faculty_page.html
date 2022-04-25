@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Faculty Page</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="form">
+            <h1>Welcome <span th:text="${userLogin}"></span></h1>
+            <a href="\add_course">Navigate to adding courses</a>
+            <a th:href="@{'/delete_course/' + ${userLogin}}"><span>Delete Course</span></a>
+
+
+            <br>
+            <a href="/"> Log out </a>
+        </div>
+    </body>
+</html>
