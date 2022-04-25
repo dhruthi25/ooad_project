@@ -1,6 +1,7 @@
 Brief Description of the project:
 
 The system is used to train and place the applicants/students. 
+
 The main actors will include:  
   1. The applicants can apply for jobs and also can opt to undergo a training process where they can select the courses they want to take up. 
   2. The faculty can add courses and delete. The courses will be associated with a faculty. 
